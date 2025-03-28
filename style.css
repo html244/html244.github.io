@@ -1,0 +1,58 @@
+/* resete no css padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /*variáveis do css*/
+  :root{
+    --cor-primaria: blue;
+    --cor-secundaria: rgb(2, 2, 172);
+    --cor-terciaria: rgb(2, 2, 73);
+       }
+
+  /*elemento body do VIEW PORT*/
+  body{
+    width: 100%;
+    height: 100vh;  
+    background-color: rgb(167, 167, 235);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+      }
+
+      /*personalizar cartão*/
+      .card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(244, 249, 244);
+        width: 20rem;
+        padding-block: 1.5rem;
+        border-radius:15px;
+        gap: 1.2rem;
+        box-shadow: 0 0 10px var(--cor-primaria);
+      }
+
+      /*imagem*/
+      img{
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        box-shadow: 0 0 10px var(--cor-primaria);
+        transition: 0.5s;
+      }
+
+      img:hover {
+        box-shadow: 0 0 20px var(--cor-terciaria);
+        cursor: pointer;
+        transform: scale(1.05);
+      }
+
+      label{
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: var(--cor-terciaria);
+      }
