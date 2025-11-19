@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BebaJá - Distribuidora de Bebidas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Tela de Autenticação -->
+    <div id="telaAutenticacao" class="tela ativa">
+        <div class="containerAutenticacao">
+            
+            <!-- Formulário de Login -->
+            <form id="formularioLogin" class="formulario">
+                <h2>Login</h2>
+                <input type="email" id="emailLogin" placeholder="Email" required>
+                <input type="password" id="senhaLogin" placeholder="Senha" required>
+                <button type="submit" class="botao">Entrar</button>
+                <p>Não tem conta? <a href="#" onclick="mostrarCadastro()">Cadastre-se aqui</a></p>
+            </form>
+
+            <!-- Formulário de Cadastro -->
+            <form id="formularioCadastro" class="formulario oculto">
+                <h2>Cadastro</h2>
+                <input type="text" id="nomeCadastro" placeholder="Nome completo" required>
+                <input type="email" id="emailCadastro" placeholder="Email" required>
+                <input type="password" id="senhaCadastro" placeholder="Senha" required>
+                <input type="password" id="confirmarSenha" placeholder="Confirmar senha" required>
+                <button type="submit" class="botao">Cadastrar</button>
+                <p>Já tem conta? <a href="#" onclick="mostrarLogin()">Faça login aqui</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Tela de Menu de Bebidas -->
+    <div id="telaMenu" class="tela">
+        <header class="cabecalho">
+            <div class="logoBebaJa">
+                <img src="imagens/logo.png" alt="Logo BebaJá" class="logoImagem">
+            </div>
+            <div class="usuarioInfo">
+                <span id="nomeUsuario"></span>
+                <button onclick="sair()" class="botaoPequeno">Sair</button>
+            </div>
+        </header>
+
+        <div class="containerPrincipal">
+            <div class="secaoBebidas">
+                <h1>Menu de Bebidas</h1>
+                <div id="gridBebidas" class="gridBebidas"></div>
+            </div>
+
+            <aside class="carrinho">
+                <div class="cabecalhoCarrinho">
+                    <h3>🛒 Carrinho</h3>
+                    <span id="totalItens" class="totalItens">0</span>
+                </div>
+                <div id="listaCarrinho" class="listaCarrinho"></div>
+                <div class="rodapeCarrinho">
+                    <div class="totalPreco">
+                        <strong>Total:</strong>
+                        <span id="totalCarrinho">R$ 0,00</span>
+                    </div>
+                    <button onclick="finalizarCompra()" class="botao">Finalizar Compra</button>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Tela de Chat -->
+    <div id="telaChat" class="tela">
+        <div class="containerChat">
+            <div class="cabecalhoChat">
+                <h2>💬 Chat BebaJá</h2>
+                <button onclick="voltarParaMenu()" class="botaoPequeno">Voltar</button>
+            </div>
+
+            <div id="caixaMensagens" class="caixaMensagens"></div>
+
+            <div class="areaMensagem">
+                <input 
+                    type="text" 
+                    id="campoMensagem" 
+                    placeholder="Digite sua mensagem..."
+                    onkeypress="verificarEnter(event)"
+                >
+                <button onclick="enviarMensagem()" class="botao">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
